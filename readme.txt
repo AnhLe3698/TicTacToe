@@ -70,7 +70,7 @@ ASYNC funcitons:
 -async using callbacks
 -async using Promises classes
 -Testing async functions
--stdin.on
+-readline, stdin.on
 -stdout.out.write
 
 Net library functions:
