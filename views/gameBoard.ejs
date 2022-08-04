@@ -19,134 +19,138 @@
       <div class="card-header"></div>
       <div class="card-body">
         <h1 class="card-title" style="font-size: 40px;">Tic Tac Toe</h1>
-        <form class="form-inline"><a href="/play" role="button" type="submit" class="btn btn-primary"
+        <form class="form-inline"><a href="/reset" role="button" type="submit" class="btn btn-primary"
           style="font-size: 30px; color: red;"> RESET </a></form>
-        <h1 style="font-size: 75px;">X's Turn</h1>
-        <% for (let i = 0; i < Object.keys(gameState).length; i++) { %>
+        <% if (turnNumber % 2 === 0) { %>
+          <h1 style="font-size: 75px;">X's Turn</h1>
+        <% } else { %>
+          <h1 style="font-size: 75px;">Y's Turn</h1>
+        <% } %>
+        
+        
         <form class="form-inline">
-          <% if (i === 0 && gameState[i] === 0) { %>
+          <% if (gameState[0] === 0) { %>
           <a href="/e1" role="button" type="submit" class="btn btn-secondary"
           style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-          >[...] ]</a>
-          <% } else if (i === 0 && gameState[i] === 1)  { %>
+          >[...]</a>
+          <% } else if (gameState[0] === 1)  { %>
           <a href="/e1" role="button" type="submit" class="btn btn-secondary"
           style="font-size: 100px; background-color: blue; color: black; border-color: black;"
           >[X]</a>
-          <% } else if (i === 0 && gameState[i] === 2) { %>
+          <% } else if (gameState[0] === 2) { %>
           <a href="/e1" role="button" type="submit" class="btn btn-secondary"
           style="font-size: 100px; background-color: blue; color: black; border-color: black;"
           >[O]</a>  
           <% } %>
-          <% if (i === 1 && gameState[i] === 0) { %>
+          <% if (gameState[1] === 0) { %>
             <a href="/e2" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 1 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[1] === 1)  { %>
               <a href="/e2" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 1 && gameState[i] === 2) { %>
+          <% } else if (gameState[1] === 2) { %>
             <a href="/e2" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
-          <% if (i === 2 && gameState[i] === 0) { %>
+          <% if (gameState[2] === 0) { %>
             <a href="/e3" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 2 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[2] === 1)  { %>
               <a href="/e3" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 2 && gameState[i] === 2) { %>
+          <% } else if (gameState[2] === 2) { %>
             <a href="/e3" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
         </form>
         <form class="form-inline">
-          <% if (i === 3 && gameState[i] === 0) { %>
+          <% if (gameState[3] === 0) { %>
             <a href="/e4" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 3 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[3] === 1)  { %>
               <a href="/e4" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 3 && gameState[i] === 2) { %>
+          <% } else if (gameState[3] === 2) { %>
             <a href="/e4" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
-          <% if (i === 4 && gameState[i] === 0) { %>
+          <% if (gameState[4] === 0) { %>
             <a href="/e5" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 4 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[4] === 1)  { %>
               <a href="/e5" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 4 && gameState[i] === 2) { %>
-            <a href="/e5" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
-            >[O]</a>  
-          <% } %>
-          <% if (i === 5 && gameState[i] === 0) { %>
+          <% } else if (gameState[4] === 2) { %>
             <a href="/e5" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 5 && gameState[i] === 1)  { %>
-              <a href="/e5" role="button" type="submit" class="btn btn-secondary"
+            >[O]</a>  
+          <% } %>
+          <% if (gameState[5] === 0) { %>
+            <a href="/e6" role="button" type="submit" class="btn btn-secondary"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
+            >[...]</a>
+          <% } else if (gameState[5] === 1)  { %>
+              <a href="/e6" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 5 && gameState[i] === 2) { %>
-            <a href="/e5" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+          <% } else if (gameState[5] === 2) { %>
+            <a href="/e6" role="button" type="submit" class="btn btn-secondary"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
         </form>
         <form class="form-inline">
-          <% if (i === 6 && gameState[i] === 0) { %>
+          <% if (gameState[6] === 0) { %>
             <a href="/e7" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 6 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[6] === 1)  { %>
               <a href="/e7" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 6 && gameState[i] === 2) { %>
+          <% } else if (gameState[6] === 2) { %>
             <a href="/e7" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
-          <% if (i === 7 && gameState[i] === 0) { %>
+          <% if (gameState[7] === 0) { %>
             <a href="/e8" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 7 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[7] === 1)  { %>
               <a href="/e8" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 7 && gameState[i] === 2) { %>
+          <% } else if (gameState[7] === 2) { %>
             <a href="/e8" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
-          <% if (i === 8 && gameState[i] === 0) { %>
+          <% if (gameState[8] === 0) { %>
             <a href="/e9" role="button" type="submit" class="btn btn-secondary"
             style="font-size: 100px; background-color: blue; color: black; border-color: black;"
-            >[...] ]</a>
-          <% } else if (i === 8 && gameState[i] === 1)  { %>
+            >[...]</a>
+          <% } else if (gameState[8] === 1)  { %>
               <a href="/e9" role="button" type="submit" class="btn btn-secondary"
               style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[X]</a>
-          <% } else if (i === 8 && gameState[i] === 2) { %>
+          <% } else if (gameState[8] === 2) { %>
             <a href="/e9" role="button" type="submit" class="btn btn-secondary"
-            style="font-size: 100px; margin-left: 10px; background-color: blue; color: black; border-color: black;"
+            style="font-size: 100px; background-color: blue; color: black; border-color: black;"
             >[O]</a>  
           <% } %>
         </form>
-        <% } %>
       </div>
     </div>
     
